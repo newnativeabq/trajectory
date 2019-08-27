@@ -39,7 +39,6 @@ column1 = dbc.Col(
 
             """
         ),
-        dcc.Link(dbc.Button('Call To Action', color='primary'), href='/predictions')
     ],
     md=4,
 )
