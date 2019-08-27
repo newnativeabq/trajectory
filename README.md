@@ -29,10 +29,10 @@ jupyter notebooks (Anaconda distributions preferred)
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
+Description of unit tests
 
 ```
-Give an example
+Example Test Usage
 ```
 
 ## Deployment
