@@ -6,6 +6,11 @@ from dash.dependencies import Input, Output
 
 from app import app
 
+# Import model
+from joblib import load
+
+# Page Components
+
 column1 = dbc.Col(
     [
         dcc.Markdown(
@@ -13,13 +18,14 @@ column1 = dbc.Col(
         
             ## Insights
 
+            **See how the models work**
+
 
             """
         ),
     ],
-    md=4,
+    md=3,
 )
-
 
 column2 = dbc.Col(
     [

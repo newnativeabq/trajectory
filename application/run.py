@@ -7,7 +7,7 @@ from dash.dependencies import Input, Output
 
 # Imports from this application
 from app import app, server
-from pages import index, predictions, insights, process
+from pages import index, insights, process
 
 """
 https://dash-bootstrap-components.opensource.faculty.ai/l/components/navbar
@@ -28,8 +28,7 @@ sticky (string, optional): Stick the navbar to the top or the bottom of the view
 navbar = dbc.NavbarSimple(
     brand='Trajectory - Health',
     brand_href='/', 
-    children=[
-        dbc.NavItem(dcc.Link('Predictions', href='/predictions', className='nav-link')), 
+    children=[ 
         dbc.NavItem(dcc.Link('Insights', href='/insights', className='nav-link')), 
         dbc.NavItem(dcc.Link('Process', href='/process', className='nav-link')), 
     ],
@@ -55,6 +54,8 @@ footer = dbc.Container(
     )
 )
 
+
+
 # For more explanation, see: 
 # Plotly Dash User Guide, URL Routing and Multiple Apps
 # https://dash.plot.ly/urls
@@ -63,7 +64,7 @@ app.layout = html.Div([
     dcc.Location(id='url', refresh=False), 
     navbar, 
     dbc.Container(id='page-content', className='mt-4'), 
-    html.Hr(), 
+    html.Hr(),
     footer
 ])
 
@@ -72,8 +73,6 @@ app.layout = html.Div([
 def display_page(pathname):
     if pathname == '/':
         return index.layout
-    elif pathname == '/predictions':
-        return predictions.layout
     elif pathname == '/insights':
         return insights.layout
     elif pathname == '/process':
